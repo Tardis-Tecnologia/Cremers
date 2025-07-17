@@ -1,12 +1,13 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
+import mapaRS from '../assets/13214744_45166_GDO.png';
 
 const DemografiaMedica: React.FC = () => {
   return (
-    <main className="min-h-screen bg-gray-100 flex flex-row">
+    <main className="min-h-screen bg-gray-100 flex flex-col md:flex-row pt-14 md:pt-0">
       <Sidebar />
       <section className="flex-1 flex flex-col items-center py-6 px-2">
-        <div className="bg-white rounded-2xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 w-full max-w-6xl border border-gray-300">
+        <div className="bg-white   p-6 md:p-10 flex flex-col md:flex-row gap-8 w-full w-full">
           {/* Coluna Esquerda */}
           <div className="flex-1 min-w-[340px] max-w-[700px]">
             <div className="flex flex-col gap-2">
@@ -110,12 +111,12 @@ const DemografiaMedica: React.FC = () => {
             </div>
           </div>
           {/* Coluna Direita - Mapa */}
-          <div className="flex flex-col items-center min-w-[320px] max-w-[400px] w-full">
+          <div className="flex flex-col items-center min-w-[320px] max-w-[800px]  w-full ">
             <span className="text-lg font-semibold text-gray-600 mb-2 mt-2 md:mt-0">Mapa de densidade por UF</span>
             <div className="w-full aspect-[4/3] bg-gray-200 rounded-xl border border-gray-300 overflow-hidden flex items-center justify-center">
               {/* Placeholder do mapa */}
-              <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Mapa_do_Brasil_com_divis%C3%B5es.svg" alt="Mapa do Brasil" className="object-cover w-full h-full" />
-            </div>
+              <img src={mapaRS} alt="Mapa do RS" className="object-contain w-full h-full" />
+                          </div>
           </div>
         </div>
       </section>

@@ -13,16 +13,13 @@ function Home() {
         {/* Aqui futuramente ficará o conteúdo visual principal */}
       </div>
       <div className="w-full flex justify-center pb-12">
-        <Button
-          variant="contained"
-          color="primary"
-          size="large"
-          startIcon={<LoginRoundedIcon />}
-          sx={{ borderRadius: '999px', fontSize: '1.5rem', px: 6, py: 2, textTransform: 'none', fontWeight: 600 }}
+        <button
           onClick={() => navigate('/demografia')}
+          className="flex items-center gap-2 bg-white text-green-500 border font-semibold rounded-full px-12 py-10 text-4xl hover:bg-green-50 transition shadow"
         >
+          <LoginRoundedIcon className="text-green-500" fontSize="large" />
           Entrar
-        </Button>
+        </button>
       </div>
     </div>
   );
