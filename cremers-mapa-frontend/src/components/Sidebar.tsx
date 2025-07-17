@@ -10,7 +10,7 @@ const Sidebar: React.FC = () => {
   const navigate = useNavigate();
   return (
     <nav
-      className="bg-green-600 border-r md:border-b-0 h-14 md:h-screen w-full md:w-20 flex flex-row md:flex-col items-center md:py-4 py-0 gap-2 shadow-sm fixed md:static top-0 left-0 z-30"
+      className="bg-green-600 border-r md:border-b-0 h-14 md:h-screen w-full md:w-20 flex flex-row md:flex-col items-center md:py-4 py-0 gap-2 shadow-sm fixed md:fixed top-0 left-0 z-30"
       aria-label="Menu lateral"
     >
       <ul className="flex flex-row md:flex-col gap-1 md:gap-2 w-full list-none p-0 m-0 items-center md:items-start justify-center md:justify-start">
@@ -43,4 +43,4 @@ const Sidebar: React.FC = () => {
   );
 };
 
-export default Sidebar; 
+export default Sidebar;
