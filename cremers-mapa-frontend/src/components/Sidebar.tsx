@@ -4,6 +4,7 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import MedicalInformationIcon from '@mui/icons-material/MedicalInformation';
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital';
 import { useNavigate } from 'react-router-dom';
+import SidebarButton from './SidebarButton';
 
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
@@ -16,20 +17,26 @@ const Sidebar: React.FC = () => {
         <li className="p-1 md:p-2 rounded-lg flex justify-center w-full">
           <LocalHospitalIcon fontSize="medium" className="text-white" />
         </li>
-        <li className="p-1 md:p-2 rounded-lg flex justify-center w-full">
-          <button onClick={() => navigate('/')} className="rounded-lg hover:bg-green-700 w-full flex justify-center" aria-label="Página inicial">
-            <HomeRoundedIcon fontSize="medium" className="text-white" />
-          </button>
+        <li className="flex justify-center w-full">
+          <SidebarButton
+            onClick={() => navigate('/')}
+            icon={<HomeRoundedIcon fontSize="medium" className="text-white" />}
+            ariaLabel="Página inicial"
+          />
         </li>
-        <li className="p-1 md:p-2 rounded-lg flex justify-center w-full">
-          <button onClick={() => navigate('/about')} className="rounded-lg hover:bg-green-700 w-full flex justify-center" aria-label="Sobre">
-            <InfoOutlinedIcon fontSize="medium" className="text-white" />
-          </button>
+        <li className="flex justify-center w-full">
+          <SidebarButton
+            onClick={() => navigate('/about')}
+            icon={<InfoOutlinedIcon fontSize="medium" className="text-white" />}
+            ariaLabel="Sobre"
+          />
         </li>
-        <li className="p-1 md:p-2 rounded-lg flex justify-center w-full">
-          <button onClick={() => navigate('/demografia')} className="rounded-lg hover:bg-green-700 w-full flex justify-center" aria-label="Demografia Médica">
-            <MedicalInformationIcon fontSize="medium" className="text-white" />
-          </button>
+        <li className="flex justify-center w-full">
+          <SidebarButton
+            onClick={() => navigate('/demografia')}
+            icon={<MedicalInformationIcon fontSize="medium" className="text-white" />}
+            ariaLabel="Demografia Médica"
+          />
         </li>
       </ul>
     </nav>
