@@ -1,6 +1,10 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
 import mapaRS from '../assets/13214744_45166_GDO.png';
+import CardInfo from '../components/CardInfo';
+import Groups2OutlinedIcon from '@mui/icons-material/Groups2Outlined';
+import MasksOutlinedIcon from '@mui/icons-material/MasksOutlined';
+import WorkspacePremiumOutlinedIcon from '@mui/icons-material/WorkspacePremiumOutlined';
 
 const DemografiaMedica: React.FC = () => {
   return (
@@ -8,104 +12,54 @@ const DemografiaMedica: React.FC = () => {
       <Sidebar />
 
       <section className="flex-1 flex flex-col items-center py-6 px-2 md:px-4 lg:px-8 ml-0 md:ml-20">
-        <div className="bg-white p-6 md:p-10 flex flex-col lg:flex-row gap-10 w-full">
-          <div className="flex-1 min-w-[340px] lg:max-w-[60%]">
+        <div className="bg-white p-6 md:p-10 flex flex-col md:flex-row gap-8 w-full w-full">
+          {/* Coluna Esquerda */}
+          <div className="flex-1 min-w-[340px] max-w-[700px]">
             <div className="flex flex-col gap-2">
               <header>
-                <h1 className="text-3xl md:text-4xl font-semibold text-gray-700">
-                  Demografia médica - dados gerais
-                </h1>
-                <div className="flex items-center gap-2 mt-2">
+                <h1 className="text-3xl md:text-4xl font-semibold text-gray-700">Demografia médica - dados gerais</h1>
+                <div className="flex items-center gap-2">
                   <span className="text-gray-500 text-lg">Data de atualização</span>
                   <input
                     type="text"
                     value="26/01/2024"
                     readOnly
                     className="border border-gray-300 rounded-md px-2 py-1 text-gray-700 text-lg bg-gray-100 w-[120px] text-center focus:outline-none"
-                    style={{ fontFamily: 'monospace' }}
+                    style={{fontFamily: 'monospace'}}
                   />
                 </div>
               </header>
-
-              <span className="text-2xl font-medium text-gray-600 mt-4">Médicos</span>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 lg:gap-6 mt-2">
-                {[
-                  {
-                    title: 'Médicos',
-                    value: '598.573',
-                    icon: (
-                      <svg
-                        className="w-6 h-6 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
-                        />
-                      </svg>
-                    ),
-                  },
-                  {
-                    title: 'Dens. mil habitantes',
-                    value: '2,81',
-                    icon: (
-                      <svg
-                        className="w-6 h-6 text-gray-600"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-                      </svg>
-                    ),
-                  },
-                  {
-                    title: 'Generalista vs Especialista',
-                    value: (
-                      <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center justify-center w-full">
-                        <span className="text-[clamp(1rem,1.5vw,1.3rem)] font-bold break-words text-center max-w-[100px]">
-                          275.324
-                        </span>
-                        <span className="text-[clamp(1rem,1.5vw,1.3rem)] font-bold break-words text-center max-w-[100px]">
-                          323.249
-                        </span>
-                      </div>
-                    ),
-                    icon: (
-                      <svg className="w-6 h-6 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M10 2a1 1 0 01.894.553l1.382 2.797 3.084.448a1 1 0 01.554 1.706l-2.23 2.174.527 3.073a1 1 0 01-1.451 1.054L10 12.347l-2.76 1.453a1 1 0 01-1.451-1.054l.527-3.073-2.23-2.174a1 1 0 01.554-1.706l3.084-.448L9.106 2.553A1 1 0 0110 2z" />
-                      </svg>
-                    ),
-                  },
-                ].map((card, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col justify-center items-center bg-white border border-gray-300 rounded-xl p-3 w-full h-full min-h-[120px]"
-                  >
-                    <div className="flex items-center gap-2 mb-1 text-center">
-                      {card.icon}
-                      <span className="text-gray-700 font-medium text-sm sm:text-base text-center">
-                        {card.title}
+              {/* Médicos */}
+              <span className="text-2xl font-medium text-gray-600">Médicos</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5 lg:gap-6 mt-2">
+                <CardInfo
+                  icon={<MasksOutlinedIcon className="text-gray-600" fontSize="medium" />}
+                  title="Médicos"
+                  value="598.573"
+                />
+                <CardInfo
+                  icon={<Groups2OutlinedIcon className="text-green-600" fontSize="medium" />}
+                  title="Dens. mil habitantes"
+                  value="2,81"
+                />
+                <CardInfo
+                  icon={<WorkspacePremiumOutlinedIcon className="text-yellow-500" fontSize="medium" />}
+                  title="Generalista vs Especialista"
+                  value={
+                    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-center justify-center w-full">
+                      <span className="text-[clamp(1rem,1.5vw,1.3rem)] font-bold break-words text-center max-w-[100px]">
+                        275.324
+                      </span>
+                      <span className="text-[clamp(1rem,1.5vw,1.3rem)] font-bold break-words text-center max-w-[100px]">
+                        323.249
                       </span>
                     </div>
-                    {typeof card.value === 'string' ? (
-                      <span className="text-[clamp(1rem,1.5vw,1.5rem)] font-bold tracking-tight break-words text-center w-full">
-                        {card.value}
-                      </span>
-                    ) : (
-                      card.value
-                    )}
-                  </div>
-                ))}
+                  }
+                />
               </div>
 
               <span className="text-2xl font-medium text-gray-600 mt-6">Inscrições de médicos</span>
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-5 lg:gap-6 mt-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-5 lg:gap-6 mt-2">
                 {[
                   { title: 'Total', value: '659.799' },
                   { title: 'Dens. mil habitantes', value: '3,09' },
@@ -115,10 +69,10 @@ const DemografiaMedica: React.FC = () => {
                 ].map(({ title, value }, i) => (
                   <div
                     key={i}
-                    className="flex flex-col justify-center items-center bg-white border border-gray-300 rounded-xl p-3 w-full h-full min-h-[100px]"
+                    className="flex flex-col justify-center items-center bg-white border border-gray-300 rounded-xl p-3 sm:p-4 md:p-6 w-full h-full min-h-[100px] max-w-xs"
                   >
-                    <span className="text-gray-700 font-medium text-sm sm:text-base text-center">{title}</span>
-                    <span className="text-[clamp(1rem,1.5vw,1.4rem)] font-bold tracking-tight break-words text-center w-full">
+                    <span className="text-gray-700 font-medium text-sm sm:text-base text-center break-words">{title}</span>
+                    <span className="break-words text-[clamp(1rem,1.5vw,1.4rem)] font-bold tracking-tight text-center w-full">
                       {value}
                     </span>
                   </div>
