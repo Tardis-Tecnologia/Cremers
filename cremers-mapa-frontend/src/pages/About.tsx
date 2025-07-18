@@ -8,7 +8,7 @@ const About: React.FC = () => {
     <Box component="main" className="min-h-screen bg-gray-50 flex flex-col md:flex-row">
       <Sidebar />
 
-      <Box className="flex-1 flex flex-col px-2 md:px-4 py-4 mt-16 md:mt-0">
+     <Box className="flex-1 flex flex-col px-2 md:px-4 py-4 pt-14 md:pt-4 md:pl-28">
         <Box className="w-full max-w-6xl mx-auto">
           <Typography
             variant="h4"
