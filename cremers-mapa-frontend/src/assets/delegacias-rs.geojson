@@ -1,0 +1,35 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "nome": "Delegacia 1" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-57,-27],[-54,-27],[-54,-28.5],[-57,-28.5],[-57,-27]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nome": "Delegacia 2" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-54,-27],[-51,-27],[-51,-28.5],[-54,-28.5],[-54,-27]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nome": "Delegacia 3" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-57,-28.5],[-54,-28.5],[-54,-30],[-57,-30],[-57,-28.5]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nome": "Delegacia 4" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-54,-28.5],[-51,-28.5],[-51,-30],[-54,-30],[-54,-28.5]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nome": "Delegacia 5" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-57,-30],[-54,-30],[-54,-32],[-57,-32],[-57,-30]]] }
+    },
+    {
+      "type": "Feature",
+      "properties": { "nome": "Delegacia 6" },
+      "geometry": { "type": "Polygon", "coordinates": [[[-54,-30],[-51,-30],[-51,-32],[-54,-32],[-54,-30]]] }
+    }
+  ]
+} 
