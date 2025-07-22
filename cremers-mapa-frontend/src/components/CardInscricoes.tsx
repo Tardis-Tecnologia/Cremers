@@ -1,14 +1,26 @@
 import React from 'react';
 
-const dadosInscricoes = [
-  { title: 'Total', value: '659.799' },
-  { title: 'Dens. mil habitantes', value: '3,09' },
-  { title: 'Principais', value: '597.650' },
-  { title: 'Secundários', value: '60.591' },
-  { title: 'Outros', value: '1.558' },
-];
+export interface InscricoesData {
+  total: string;
+  densidade: string;
+  principais: string;
+  secundarios: string;
+  outros: string;
+}
 
-const CardInscricoes: React.FC = () => {
+interface CardInscricoesProps {
+  inscricoes: InscricoesData;
+}
+
+const CardInscricoes: React.FC<CardInscricoesProps> = ({ inscricoes }) => {
+  const dadosInscricoes = [
+    { title: 'Total', value: inscricoes.total },
+    { title: 'Dens. mil habitantes', value: inscricoes.densidade },
+    { title: 'Principais', value: inscricoes.principais },
+    { title: 'Secundários', value: inscricoes.secundarios },
+    { title: 'Outros', value: inscricoes.outros },
+  ];
+
   return (
     <>
       <span className="text-2xl font-medium text-gray-600 mt-6">Inscrições de médicos</span>
