@@ -64,10 +64,7 @@ const MapaDemografia: React.FC<Props> = ({
                     const index = sedesDelegacias.findIndex(
                       (s) => normalize(s.nome) === normalize(delegacia)
                     );
-                    const fillColor =
-                      normalize(delegaciaSelecionada) === normalize(delegacia) && index >= 0
-                        ? coresDelegacias[index]
-                        : '#d1d5db';
+                    const fillColor = index >= 0 ? coresDelegacias[index] : '#d1d5db';
 
                     layer.setStyle({
                       fillColor,
@@ -86,7 +83,7 @@ const MapaDemografia: React.FC<Props> = ({
                 const fillColorInicial = indexInicial >= 0 ? coresDelegacias[indexInicial] : '#d1d5db';
 
                 layer.setStyle({
-                  fillColor: normalize(delegaciaSelecionada) === normalize(delegacia) ? fillColorInicial : '#d1d5db',
+                  fillColor: fillColorInicial, // sempre usa a cor da delegacia
                   fillOpacity: 0.6,
                   color: '#e5e7eb',
                   weight: 1,
